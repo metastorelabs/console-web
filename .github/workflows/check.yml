@@ -1,0 +1,62 @@
+name: Test
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  check-code:
+    name: 🕵️‍♀️ Check Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📂 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 💾 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: 🔢 Get pnpm version
+        run: |
+          echo "pnpm_version=$(cat .github/pnpm.version)" >> $GITHUB_ENV
+
+      - uses: pnpm/action-setup@v2
+        name: 📦 Install pnpm
+        id: pnpm-install
+        with:
+          version: ${{ env.pnpm_version }}
+          run_install: false
+
+      - name: 🧳 Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: 🔄 Cache dependencies
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: ⬇️ Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: ✨ Check Format (Prettier)
+        run: pnpm run check-format
+
+      - name: 🔍 Lint Check (ESLint)
+        run: pnpm run check-lint
+
+      - name: 🚧 TypeScript Check
+        run: pnpm run check-types
+
+      - name: 🎉 All checks passed
+        run: echo "All checks passed successfully"
