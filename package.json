@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --fix",
+    "format": "prettier --write .",
+    "check-lint": "next lint",
+    "check-format": "prettier --check .",
+    "check-types": "tsc --pretty --noEmit",
     "prepare": "husky install",
     "preinstall": "npx only-allow pnpm",
     "commit": "commit"
@@ -29,6 +33,12 @@
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
     "@commitlint/prompt-cli": "^17.6.6",
-    "husky": "^8.0.3"
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0"
   }
 }
