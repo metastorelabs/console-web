@@ -173,6 +173,7 @@ const Landing = () => {
                     href='https://docs.metastore.to'
                     className='text-sm font-semibold leading-6 text-white'
                     target='_blank'
+                    rel='noopener'
                   >
                     Go to Docs <span aria-hidden='true'>→</span>
                   </Link>
@@ -296,6 +297,7 @@ const Landing = () => {
                   href='https://docs.metastore.to'
                   className='text-sm font-semibold leading-6 text-white'
                   target='_blank'
+                  rel='noopener'
                 >
                   Go to Docs <span aria-hidden='true'>→</span>
                 </Link>
