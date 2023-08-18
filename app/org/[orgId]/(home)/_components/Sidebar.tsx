@@ -14,21 +14,22 @@ import {
   HiPlus,
 } from 'react-icons/hi2'
 
-import usePathfinder from '@/hooks/usePathfinder'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSelectedLayoutSegment } from 'next/navigation'
 
 import CreateOrgModal from '../../_components/CreateOrgModal'
 import CreateProductModal from './CreateProductModal'
 
 const navigation = [
-  { name: 'Dashboard', href: '', icon: HiOutlineHome },
-  { name: 'Members', href: 'members', icon: HiOutlineUsers },
+  { name: 'Dashboard', href: '', icon: HiOutlineHome, activeSegment: '(dashboard)' },
+  { name: 'Members', href: 'members', icon: HiOutlineUsers, activeSegment: 'members' },
   {
     name: 'Settings',
     href: 'settings',
     icon: HiOutlineCog6Tooth,
+    activeSegment: 'settings',
   },
 ]
 
@@ -40,7 +41,7 @@ const products = [
 
 const Sidebar = ({ orgId }: { orgId: string }) => {
   const [organizationOpen, setOrganizationOpen] = useState(false)
-  const baseNav = usePathfinder(2) || ''
+  const navSegment = useSelectedLayoutSegment()
 
   return (
     <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-gray-950 px-6 ring-1 ring-white/5 pb-4 min-h-screen'>
@@ -92,7 +93,7 @@ const Sidebar = ({ orgId }: { orgId: string }) => {
                   <Link
                     href={`/org/${orgId}/${item.href}`}
                     className={clsx(
-                      baseNav === (item.href === '' ? '/' : item.href)
+                      navSegment === item.activeSegment
                         ? 'bg-gray-900 text-white'
                         : 'text-gray-400 hover:text-white hover:bg-gray-900',
                       'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold focus-visible-ring'

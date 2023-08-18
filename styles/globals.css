@@ -33,4 +33,8 @@
   .input-ui {
     @apply block w-full bg-white/5 focus-ring rounded-md pl-5 border-0 py-2 text-gray-200 placeholder:text-gray-500 text-sm leading-6;
   }
+
+  .button-indigo {
+    @apply flex-none rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus-ring ring-offset-2 !ring-indigo-600;
+  }
 }

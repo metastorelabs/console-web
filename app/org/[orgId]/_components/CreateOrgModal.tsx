@@ -103,7 +103,7 @@ const CreateOrgModal = ({ children }: { children: React.ReactNode }) => {
                         <div className='sm:flex mt-10'>
                           <button
                             type='button'
-                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible-ring ring-offset-2'
+                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
                             onClick={onClose}
                             ref={cancelButtonRef}
                           >
@@ -113,7 +113,7 @@ const CreateOrgModal = ({ children }: { children: React.ReactNode }) => {
                           <button
                             type='button'
                             className={clsx(
-                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm mt-3 sm:mt-0 focus-visible-ring ring-offset-2 !ring-blue-700',
+                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-blue-700',
                               !orgName ? 'opacity-50' : 'hover:bg-blue-700'
                             )}
                             disabled={!orgName}
@@ -176,7 +176,7 @@ const CreateOrgModal = ({ children }: { children: React.ReactNode }) => {
                         <div className='sm:flex mt-10'>
                           <button
                             type='button'
-                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible-ring ring-offset-2'
+                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
                             onClick={() => {
                               setStep(1)
                             }}
@@ -187,7 +187,7 @@ const CreateOrgModal = ({ children }: { children: React.ReactNode }) => {
                           <button
                             type='button'
                             className={clsx(
-                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 mt-3 sm:mt-0 focus-visible-ring ring-offset-2 !ring-blue-700'
+                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-blue-700'
                             )}
                             onClick={() => {
                               setOpen(false)
