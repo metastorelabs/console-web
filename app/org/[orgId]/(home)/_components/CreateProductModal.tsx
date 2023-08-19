@@ -191,7 +191,7 @@ const CreateProductModal = ({ orgId, children }: { orgId: string; children: Reac
                             )}
                             onClick={() => {
                               setOpen(false)
-                              router.push(`/org/${orgId}/products/${productName}`)
+                              router.push(`/org/${orgId}/product/${productName}`)
                             }}
                           >
                             Confirm

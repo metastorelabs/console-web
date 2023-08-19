@@ -108,7 +108,7 @@ const Dashboard = ({
                             height={32}
                           />
                           <Link
-                            href={`/${params.orgId}/products/${item.game.name}`}
+                            href={`/${params.orgId}/product/${item.game.name}`}
                             className='truncate text-sm font-medium leading-6 text-white hover:underline cursor-pointer'
                           >
                             {item.game.name}

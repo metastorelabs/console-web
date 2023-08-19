@@ -46,7 +46,7 @@ const Sidebar = ({ orgId }: { orgId: string }) => {
   return (
     <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-gray-950 px-6 ring-1 ring-white/5 pb-4 min-h-screen'>
       <button
-        className='flex h-16 shrink-0 items-center text-gray-100 mt-4 px-2 hover:bg-gray-900 rounded-md -mx-2 cursor-pointer focus-visible-ring'
+        className='flex h-16 shrink-0 items-center text-gray-100 mt-4 px-2 hover:bg-gray-900 rounded-md -mx-2 focus-visible-ring'
         onClick={() => setOrganizationOpen(!organizationOpen)}
       >
         <Image
@@ -69,7 +69,7 @@ const Sidebar = ({ orgId }: { orgId: string }) => {
               <h2 className='ml-3 mr-1 line-clamp-1 text-xs font-semibold'>Add Organization</h2>
             </button>
           </CreateOrgModal>
-          <button className='flex items-center hover:bg-gray-900 p-2 rounded-md cursor-pointer w-full focus-visible-ring'>
+          <button className='flex items-center hover:bg-gray-900 p-2 rounded-md w-full focus-visible-ring'>
             <Image
               className='rounded-lg aspect-square'
               src='/temp/kojima.png'
@@ -123,7 +123,7 @@ const Sidebar = ({ orgId }: { orgId: string }) => {
               {products.map((product) => (
                 <li key={product.name}>
                   <Link
-                    href={`/org/${orgId}/products/${product.name}`}
+                    href={`/org/${orgId}/product/${product.name}`}
                     className='flex gap-x-3 rounded-md p-2 text-sm items-center leading-6 font-semibold text-gray-400 hover:text-white hover:bg-gray-900 focus-visible-ring'
                   >
                     <Image
