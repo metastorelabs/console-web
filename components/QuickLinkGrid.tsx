@@ -75,7 +75,7 @@ export default function QuickLinkGrid({ gridLayout }: { gridLayout: string }) {
               <p className='mt-3'>
                 <Link
                   href={feature.href}
-                  className='text-sm font-semibold leading-6 text-indigo-400'
+                  className='text-sm font-semibold leading-6 text-indigo-400 focus-visible-ring -m-1 p-1'
                   target='_blank'
                   prefetch={false}
                   rel='noopener'

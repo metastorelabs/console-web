@@ -1,6 +1,5 @@
 import { BsDiscord } from 'react-icons/bs'
 
-import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -80,14 +79,14 @@ const navigation = {
   ],
 }
 
-export default function Footer({ small = false, orgId }: { small?: boolean; orgId: string }) {
+export default function Footer({ orgId }: { orgId: string }) {
   return (
     <footer className='bg-gray-950 mt-20'>
       <h2 id='footer-heading' className='sr-only'>
         Footer
       </h2>
       <div className='mx-auto max-w-7xl px-6 py-8 lg:px-8'>
-        <div className={!small ? 'xl:grid xl:grid-cols-3 xl:gap-8' : ''}>
+        <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
           <div className='space-y-6'>
             <Image src='/longlogo.png' alt='Company name' width={180} height={80} />
             <p className='text-sm leading-6 text-gray-300'>A decentralized metaverse marketplace.</p>
@@ -106,7 +105,7 @@ export default function Footer({ small = false, orgId }: { small?: boolean; orgI
               ))}
             </div>
           </div>
-          <div className={clsx('mt-16 grid grid-cols-2 gap-8', !small ? ' xl:col-span-2 xl:mt-0' : '')}>
+          <div className='mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0'>
             <div className='md:grid md:grid-cols-2 md:gap-8'>
               <div>
                 <h3 className='text-sm font-semibold leading-6 text-white'>Quick Links</h3>
