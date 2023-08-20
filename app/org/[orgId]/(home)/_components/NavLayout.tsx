@@ -50,7 +50,11 @@ const NavLayout = ({ children, orgId }: { children: React.ReactNode; orgId: stri
                   leaveTo='opacity-0'
                 >
                   <div className='absolute left-full top-0 flex w-16 justify-center pt-5'>
-                    <button type='button' className='-m-2.5 p-2.5' onClick={() => setSidebarOpen(false)}>
+                    <button
+                      type='button'
+                      className='-m-2.5 p-2.5 focus-visible-ring rounded-md'
+                      onClick={() => setSidebarOpen(false)}
+                    >
                       <span className='sr-only'>Close sidebar</span>
                       <HiOutlineXMark className='h-6 w-6 text-white' aria-hidden='true' />
                     </button>
