@@ -153,7 +153,7 @@ const Settings = ({
 
         <div className='flex items-start md:col-span-2'>
           <DeleteCheckModal keyword='organization' captchaText={params.orgId}>
-            <button className='rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700'>
+            <button className='rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus-visible-ring ring-offset-2 !ring-red-700'>
               Yes, delete my organization
             </button>
           </DeleteCheckModal>
