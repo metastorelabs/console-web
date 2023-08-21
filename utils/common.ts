@@ -13,15 +13,24 @@ export const copyToClipboard = (text: string, message?: string): void => {
 }
 
 export const toPositiveInteger = (text: string, decimal?: boolean, min?: number, max?: number): string => {
+  if (!text) return '' // If empty string or undefined, return empty string
+
   const regex = decimal ? /[^0-9.]/g : /[^0-9]/g
+
   let result = text.replace(regex, '')
 
   if (decimal) {
-    const decimalIndex = result.indexOf('.')
-    if (decimalIndex !== -1 && decimalIndex < result.length - 3) {
-      result = result.substring(0, decimalIndex + 3)
+    // Only allow one decimal point
+    while (result.indexOf('.') !== result.lastIndexOf('.')) {
+      result = result.substring(0, result.lastIndexOf('.')) + result.substring(result.lastIndexOf('.') + 1)
     }
+  } else {
+    // If decimal is false, we strip out any periods
+    result = result.replace('.', '')
   }
+
+  // If after removing invalid characters the result is not a valid number or empty string, return empty string
+  if (!result || isNaN(Number(result))) return ''
 
   const numberResult = Number(result)
 
@@ -34,4 +43,13 @@ export const toPositiveInteger = (text: string, decimal?: boolean, min?: number,
   }
 
   return result
+}
+
+export const compactNumberFormat = (total: string): string => {
+  const numberValue = parseInt(total, 10)
+
+  if (numberValue < 10000) return total
+
+  const valueInThousands = numberValue / 1000
+  return `${valueInThousands.toFixed(valueInThousands % 1 !== 0 ? 1 : 0)}k`
 }
