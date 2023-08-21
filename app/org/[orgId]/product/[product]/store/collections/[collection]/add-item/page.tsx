@@ -212,7 +212,8 @@ export default function AddItem({
                         <span>Upload file</span>
                       </label>
                     </div>
-                    <p className='text-xs text-gray-500'>Image up to 10MB, GLB up to 50MB</p>
+                    <p className='text-xs text-gray-500'>glb, jpg, png, gif, mp3, wav, ogg, mp4, webm</p>
+                    <p className='text-xs text-gray-500'>Max file size: 50MB</p>
                   </div>
                 )}
                 <input
