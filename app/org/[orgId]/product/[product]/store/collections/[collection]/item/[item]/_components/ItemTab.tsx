@@ -41,6 +41,7 @@ const ItemTab = ({
                   : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-300',
                 'whitespace-nowrap border-b-2 py-4 text-sm font-medium focus-visible-ring ring-inset px-1 -mx-1'
               )}
+              aria-current={selected === tab.slug ? 'page' : undefined}
             >
               {tab.name}
             </Link>

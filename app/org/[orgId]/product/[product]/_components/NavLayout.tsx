@@ -87,11 +87,11 @@ const NavLayout = ({ children, orgId, product }: { children: React.ReactNode; or
                 width={34}
                 height={34}
               />
-              <span className='line-clamp-1 uppercase'> {product}</span>
+              <span className='line-clamp-1 uppercase max-sm:hidden'> {product}</span>
             </div>
           </Topbar>
 
-          <main className='pt-10 pb-40 min-h-screen bg-gray-900'>
+          <main className='pt-10 pb-40 min-h-screen bg-gray-900 relative'>
             <div className='px-4 sm:px-6 lg:px-20'>{children}</div>
           </main>
 

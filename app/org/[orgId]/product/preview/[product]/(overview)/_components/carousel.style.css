@@ -1,0 +1,11 @@
+.mySwiper {
+  box-sizing: border-box;
+}
+
+.mySwiper .swiper-slide {
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
