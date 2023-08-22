@@ -195,7 +195,7 @@ const Launchpad = () => {
             {env === 'Dev' && (
               <ConfirmationModal
                 title='Are you sure you want to push to Review?'
-                description="You won't be able to push to live until we review these new changes."
+                description='The current review stage will be revoked and you have to apply for a re-review.'
                 onConfirm={pushToReview}
                 disabled={!hasSelectedItems()}
                 pause={!underReview && !pushToLiveEnabled}

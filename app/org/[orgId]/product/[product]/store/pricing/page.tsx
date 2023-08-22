@@ -190,8 +190,7 @@ const Pricing = () => {
       <div className='mt-10'>
         <h2 className='text-base font-semibold leading-7 text-white'>Choose a price for your product</h2>
         <p className='mt-1 text-xs leading-4 text-gray-400 max-w-2xl'>
-          Please note that Metastore charges a 8% fee for transactions using the STORE payment method and an 12% fee for
-          all other payment methods on every product sale.
+          Please note that Metastore charges a 12% fee on every product sale.
         </p>
 
         <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 max-w-3xl'>
