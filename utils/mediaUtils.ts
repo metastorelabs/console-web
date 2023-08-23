@@ -22,7 +22,12 @@ export const validateAspectRatio = (file: File, ratio: string): Promise<boolean>
   })
 }
 
-export const createThumbnail = async (file: File): Promise<string> => {
+export interface ThumbnailResult {
+  url: string
+  file: File
+}
+
+export const createThumbnail = async (file: File): Promise<ThumbnailResult> => {
   return new Promise((resolve, reject) => {
     const video = document.createElement('video')
     const canvas = document.createElement('canvas')
@@ -47,8 +52,15 @@ export const createThumbnail = async (file: File): Promise<string> => {
             reject(new Error('Thumbnail generation failed'))
             return
           }
+
+          // Convert the Blob into a File
+          const thumbnailFile = new File([blob], 'thumbnail.jpg', { type: 'image/jpeg' })
+
           const thumbnailUrl = URL.createObjectURL(blob)
-          resolve(thumbnailUrl)
+          resolve({
+            url: thumbnailUrl,
+            file: thumbnailFile,
+          })
         },
         'image/jpeg',
         0.5

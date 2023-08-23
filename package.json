@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@hello-pangea/dnd": "^16.3.0",
     "@react-three/drei": "^9.80.4",
     "@react-three/fiber": "^8.13.7",
     "@types/node": "20.3.2",
