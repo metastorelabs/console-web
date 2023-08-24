@@ -8,6 +8,7 @@ import { HiOutlineGlobeAlt } from 'react-icons/hi'
 import { toast } from 'react-hot-toast'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
 import { PolygonaLogo } from '@/components/Icons'
 import MultiSelect from '@/components/MultiSelect'
 
@@ -250,9 +251,7 @@ const Attributes = ({
         </div>
 
         <div className='mt-6 flex items-center justify-end gap-x-6'>
-          <button type='button' onClick={handleSubmit} className='button-indigo'>
-            Save Changes
-          </button>
+          <Button onClick={handleSubmit}>Save Changes</Button>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import Button from '@/components/button'
+
 import AddMemberModal from './AddMemberModal'
 
 const people = [
@@ -43,9 +45,7 @@ export default function Members({
         </div>
         <div className='ml-16 mt-0 flex-none'>
           <AddMemberModal orgId={params.orgId}>
-            <button type='button' className='button-indigo'>
-              Add Member
-            </button>
+            <Button size='md'>Add Member</Button>
           </AddMemberModal>
         </div>
       </div>
@@ -82,7 +82,7 @@ export default function Members({
                     <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-300'>{person.product}</td>
                     <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-300'>{person.role}</td>
                     <td className='relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0'>
-                      <button className='text-indigo-400 hover:text-indigo-300 focus-visible-ring -mx-1 px-1'>
+                      <button className='text-blue-500 hover:text-blue-400 focus-visible-ring -mx-1 px-1'>
                         Edit<span className='sr-only'>, {person.name}</span>
                       </button>
                     </td>

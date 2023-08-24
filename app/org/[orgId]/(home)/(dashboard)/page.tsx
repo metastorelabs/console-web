@@ -109,7 +109,7 @@ const Dashboard = ({
                           />
                           <Link
                             href={`/${params.orgId}/product/${item.game.name}`}
-                            className='truncate text-sm font-medium leading-6 text-white hover:underline cursor-pointer'
+                            className='truncate text-sm font-medium leading-6 text-white hover:underline focus-visible-ring -m-1 p-1'
                           >
                             {item.game.name}
                           </Link>

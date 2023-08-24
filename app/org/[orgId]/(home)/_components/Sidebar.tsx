@@ -19,7 +19,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 
-import CreateOrgModal from '../../_components/CreateOrgModal'
+import CreateOrgModal from '../../../_components/CreateOrgModal'
 import CreateProductModal from './CreateProductModal'
 
 const navigation = [

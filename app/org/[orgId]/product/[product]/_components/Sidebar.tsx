@@ -30,7 +30,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useSelectedLayoutSegments } from 'next/navigation'
 
-import CreateOrgModal from '../../../_components/CreateOrgModal'
+import CreateOrgModal from '../../../../_components/CreateOrgModal'
 
 const productNavigation = [
   { name: 'Overview', href: '', icon: HiOutlineViewGrid, activeSegment: '(overview)' },

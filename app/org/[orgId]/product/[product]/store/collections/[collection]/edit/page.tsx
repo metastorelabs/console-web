@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { toast } from 'react-hot-toast'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
 import ResizableTextarea from '@/components/ResizableTextarea'
 
 type formData = {
@@ -258,9 +259,9 @@ const EditCollection = ({
         </div>
 
         {/* Create Button */}
-        <button className='button-indigo w-full' onClick={handleSubmit}>
+        <Button className='w-full' onClick={handleSubmit}>
           Edit Collection
-        </button>
+        </Button>
       </div>
     </div>
   )

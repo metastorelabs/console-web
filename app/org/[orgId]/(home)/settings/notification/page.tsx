@@ -6,6 +6,8 @@ import { Switch } from '@headlessui/react'
 import clsx from 'clsx'
 import { toast } from 'react-hot-toast'
 
+import Button from '@/components/button'
+
 type Settings = {
   [category: string]: {
     [key: string]: boolean
@@ -171,15 +173,10 @@ const Notification = () => {
         </div>
       ))}
       <div className='mt-6 pt-4 flex items-center justify-end gap-x-6'>
-        <button
-          type='reset'
-          className='rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white/5 focus-ring ring-offset-2'
-        >
+        <Button type='reset' variant='ghost'>
           Revert Changes
-        </button>
-        <button onClick={saveChange} className='button-indigo'>
-          Save Changes
-        </button>
+        </Button>
+        <Button onClick={saveChange}>Save Changes</Button>
       </div>
     </div>
   )

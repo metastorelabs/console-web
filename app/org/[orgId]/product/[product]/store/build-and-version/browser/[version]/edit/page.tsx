@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react'
 
-import Link from 'next/link'
-
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
+import LinkButton from '@/components/button/LinkButton'
 import ResizableTextarea from '@/components/ResizableTextarea'
 
 const VersionEdit = ({
@@ -119,15 +119,14 @@ const VersionEdit = ({
         </div>
 
         <div className='mt-6 flex items-center justify-end gap-x-6 max-w-xl'>
-          <Link
+          <LinkButton
             href={`/org/${params.orgId}/product/${params.product}/store/build-and-version/browser/${params.version}`}
-            className='text-sm font-semibold leading-6 text-white hover:underline focus-visible-ring -m-1 p-1 rounded-md'
+            variant='underline'
+            size='md'
           >
             Back
-          </Link>
-          <button type='submit' className='button-indigo'>
-            Edit version
-          </button>
+          </LinkButton>
+          <Button size='md'>Edit version</Button>
         </div>
       </form>
     </div>

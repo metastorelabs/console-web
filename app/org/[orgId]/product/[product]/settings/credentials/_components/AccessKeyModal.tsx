@@ -6,9 +6,9 @@ import { HiOutlineDuplicate } from 'react-icons/hi'
 
 import { copyToClipboard, textLimiter, toPositiveInteger } from '@/utils/common'
 import { Dialog, Transition } from '@headlessui/react'
-import clsx from 'clsx'
 import { format } from 'date-fns-tz'
 
+import Button from '@/components/button'
 import DateTimePicker from '@/components/DateTimePicker'
 
 type FormData = {
@@ -196,27 +196,23 @@ const AccessKeyModal = ({ children }: { children: React.ReactNode }) => {
                         </div>
 
                         <div className='sm:flex mt-10'>
-                          <button
-                            type='button'
-                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
+                          <Button
+                            className='w-full mr-8'
+                            variant='white'
                             onClick={() => {
                               setOpen(false)
                             }}
                           >
                             Cancel
-                          </button>
+                          </Button>
 
-                          <button
-                            type='button'
-                            className={clsx(
-                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-blue-700',
-                              checkFormValidity() ? 'hover:bg-blue-700' : 'opacity-50'
-                            )}
+                          <Button
+                            className='w-full mt-3 sm:mt-0'
                             onClick={createAccessCode}
                             disabled={!checkFormValidity()}
                           >
                             Create Access Code
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     ) : (
@@ -255,28 +251,25 @@ const AccessKeyModal = ({ children }: { children: React.ReactNode }) => {
                         </div>
 
                         <div className='sm:flex mt-10'>
-                          <button
-                            type='button'
-                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
+                          <Button
+                            className='w-full mr-8'
+                            variant='white'
                             onClick={() => {
                               onClose()
                             }}
                           >
                             Close
-                          </button>
+                          </Button>
 
-                          <button
-                            type='button'
-                            className={clsx(
-                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-blue-700'
-                            )}
+                          <Button
+                            className='w-full mt-3 sm:mt-0'
                             onClick={() => {
                               setFormData(defaultFormData)
                               setShowAccessCode(false)
                             }}
                           >
                             Create Another
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     )}

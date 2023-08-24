@@ -6,6 +6,7 @@ import { createThumbnail, validateAspectRatio } from '@/utils/mediaUtils'
 import toast from 'react-hot-toast'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
 
 import MediaPanel from './_components/MediaPanel'
 import MediaUploader from './_components/MediaUploader'
@@ -180,9 +181,7 @@ const Carousel = ({
         )}
       </div>
       <div className='mt-10 flex items-center border-t-2 py-3 max-w-7xl border-gray-800 justify-end gap-x-6'>
-        <button type='button' onClick={onSubmit} className='button-indigo'>
-          Save Changes
-        </button>
+        <Button onClick={onSubmit}>Save Changes</Button>
       </div>
     </div>
   )

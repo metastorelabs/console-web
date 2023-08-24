@@ -13,6 +13,7 @@ import Dropzone from 'react-dropzone'
 import toast from 'react-hot-toast'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
 import ConfirmationModal from '@/components/ConfirmationModal'
 import ResizableTextarea from '@/components/ResizableTextarea'
 
@@ -225,7 +226,7 @@ const General = ({
                   href='https://docs.metastore.to/store-details#logo-and-trailer'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-indigo-500 font-semibold focus-visible-ring'
+                  className='text-blue-500 hover:text-blue-400 font-semibold focus-visible-ring'
                 >
                   Learn More.
                 </Link>
@@ -649,17 +650,15 @@ const General = ({
               description='Are you sure you want to revert all changes?'
               onConfirm={revertChanges}
             >
-              <button
+              <Button
                 type='reset'
-                className='rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white/5 focus-visible-ring'
-                disabled={initialFormData === formData}
+                variant='ghost'
+                // disabled={initialFormData === formData}
               >
                 Revert Changes
-              </button>
+              </Button>
             </ConfirmationModal>
-            <button type='submit' className='button-indigo'>
-              Save Changes
-            </button>
+            <Button>Save Changes</Button>
           </div>
         </form>
       </div>

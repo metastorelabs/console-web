@@ -8,6 +8,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
+import LinkButton from '@/components/button/LinkButton'
 
 const Version = ({
   params,
@@ -64,18 +66,16 @@ const Version = ({
             </div>
           </div>
           <div className='mt-5 flex md:ml-4 md:mt-0'>
-            <Link
+            <LinkButton
               href={`/org/${params.orgId}/product/${params.product}/store/build-and-version/browser/${params.version}/edit`}
-              className='inline-flex items-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible-ring ring-offset-2'
+              size='sm'
+              variant='fade'
             >
               Edit
-            </Link>
-            <button
-              type='button'
-              className='ml-3 inline-flex items-center rounded-md bg-rose-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-400 focus-visible-ring ring-offset-2 focus:ring-rose-500'
-            >
+            </LinkButton>
+            <Button type='button' className='ml-3' variant='red' size='sm'>
               Delete
-            </button>
+            </Button>
           </div>
         </div>
 

@@ -10,9 +10,17 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
-const CreateOrgModal = ({ children }: { children: React.ReactNode }) => {
+import Button from '@/components/button'
+
+const CreateOrgModal = ({
+  children,
+  initiallyOpen = false,
+}: {
+  children?: React.ReactNode
+  initiallyOpen?: boolean
+}) => {
   const cancelButtonRef = useRef(null)
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(initiallyOpen)
   const [step, setStep] = useState(1)
   const [orgName, setOrgName] = useState('')
   const [avatar, setAvatar] = useState<File | null>(null)
@@ -28,7 +36,7 @@ const CreateOrgModal = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div onClick={() => setOpen(true)}>{children}</div>
+      {children && <div onClick={() => setOpen(true)}>{children}</div>}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as='div' className='relative z-50' initialFocus={cancelButtonRef} onClose={onClose}>
           <Transition.Child
@@ -101,26 +109,24 @@ const CreateOrgModal = ({ children }: { children: React.ReactNode }) => {
                         </div>
 
                         <div className='sm:flex mt-10'>
-                          <button
+                          <Button
                             type='button'
-                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
+                            className='w-full mr-8'
+                            variant='white'
                             onClick={onClose}
                             ref={cancelButtonRef}
                           >
                             Cancel
-                          </button>
+                          </Button>
 
-                          <button
+                          <Button
                             type='button'
-                            className={clsx(
-                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-blue-700',
-                              !orgName ? 'opacity-50' : 'hover:bg-blue-700'
-                            )}
+                            className={clsx('w-full mt-3 sm:mt-0')}
                             disabled={!orgName}
                             onClick={() => setStep(2)}
                           >
                             Continue
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     ) : (
@@ -174,28 +180,27 @@ const CreateOrgModal = ({ children }: { children: React.ReactNode }) => {
                         </div>
 
                         <div className='sm:flex mt-10'>
-                          <button
+                          <Button
                             type='button'
-                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
+                            className='w-full mr-8'
+                            variant='white'
                             onClick={() => {
                               setStep(1)
                             }}
                           >
                             Back
-                          </button>
+                          </Button>
 
-                          <button
+                          <Button
                             type='button'
-                            className={clsx(
-                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-blue-700'
-                            )}
+                            className={clsx('w-full mt-3 sm:mt-0')}
                             onClick={() => {
                               setOpen(false)
                               router.push(`/org/${orgName}`)
                             }}
                           >
                             Confirm
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     )}

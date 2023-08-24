@@ -14,6 +14,7 @@ import Image from 'next/image'
 import toast from 'react-hot-toast'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
 
 // components
 import ItemCard from '../_components/ItemCard'
@@ -460,9 +461,9 @@ export default function AddItem({
 
           {/* Create Button */}
           <div className='my-20'>
-            <button onClick={handleCreate} className='button-indigo w-full'>
+            <Button onClick={handleCreate} className='w-full'>
               Create NFT
-            </button>
+            </Button>
           </div>
         </div>
 

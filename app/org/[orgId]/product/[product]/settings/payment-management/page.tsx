@@ -5,6 +5,8 @@ import React, { useState } from 'react'
 import { textLimiter } from '@/utils/common'
 import { toast } from 'react-hot-toast'
 
+import Button from '@/components/button'
+
 const PaymentManagement = ({
   params: { orgId, product },
 }: {
@@ -54,9 +56,7 @@ const PaymentManagement = ({
           </div>
 
           <div className='mt-8 flex'>
-            <button type='button' onClick={handleSave} className='button-indigo'>
-              Save changes
-            </button>
+            <Button onClick={handleSave}>Save changes</Button>
           </div>
         </form>
       </div>

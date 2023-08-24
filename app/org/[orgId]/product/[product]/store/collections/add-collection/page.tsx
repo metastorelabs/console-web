@@ -12,6 +12,7 @@ import Image from 'next/image'
 import { toast } from 'react-hot-toast'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
 import { PolygonaLogo } from '@/components/Icons'
 import ResizableTextarea from '@/components/ResizableTextarea'
 
@@ -449,9 +450,9 @@ const AddCollection = ({
         )}
 
         {/* Create Button */}
-        <button className='button-indigo w-full' onClick={handleSubmit}>
+        <Button className='w-full' onClick={handleSubmit}>
           {formData.collectionType === 'import' ? 'Import Collection' : 'Create Collection'}
-        </button>
+        </Button>
       </div>
     </div>
   )

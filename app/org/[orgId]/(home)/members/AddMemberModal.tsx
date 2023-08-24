@@ -6,8 +6,8 @@ import { HiOutlineDuplicate } from 'react-icons/hi'
 
 import { copyToClipboard } from '@/utils/common'
 import { Dialog, Transition } from '@headlessui/react'
-import clsx from 'clsx'
 
+import Button from '@/components/button'
 import ListBox from '@/components/Listbox'
 
 const expiryOptions = [
@@ -119,9 +119,9 @@ const AddMemberModal = ({ orgId, children }: { orgId: string; children: React.Re
                               className='input-ui'
                               placeholder='Enter email address'
                             />
-                            <button type='button' className='button-indigo'>
+                            <Button size='md' className='flex-none'>
                               Invite Member
-                            </button>
+                            </Button>
                           </div>
 
                           <div className='relative mt-10'>
@@ -162,7 +162,7 @@ const AddMemberModal = ({ orgId, children }: { orgId: string; children: React.Re
                                   expiryOptions.find((option) => option.value === linkLimit.expiryLimit)?.name +
                                   '.'}
                               <button
-                                className='inline ml-1 text-indigo-500 focus-visible-ring hover:text-indigo-400 -mx-1 px-1'
+                                className='inline ml-1 text-blue-500 focus-visible-ring hover:text-blue-400 -mx-1 px-1'
                                 onClick={() => setShowEditLinkPage(true)}
                               >
                                 Edit Invite link
@@ -217,21 +217,18 @@ const EditLinkPage = ({
         </div>
       </div>
       <div className='sm:flex mt-10'>
-        <button
-          type='button'
-          className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
+        <Button
+          className='w-full mr-8'
+          variant='white'
           onClick={() => {
             setShowEditLinkPage(false)
           }}
         >
           Back
-        </button>
+        </Button>
 
-        <button
-          type='button'
-          className={clsx(
-            'w-full justify-center rounded bg-emerald-600 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-green-700'
-          )}
+        <Button
+          className='w-full mt-3 sm:mt-0'
           onClick={() => {
             setLink('https://console.meta-store.in/15saMnt3E')
             setShowEditLinkPage(false)
@@ -242,7 +239,7 @@ const EditLinkPage = ({
           }}
         >
           Generate Link
-        </button>
+        </Button>
       </div>
     </div>
   )

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
 import ListBox from '@/components/Listbox'
 import MultiSelect from '@/components/MultiSelect'
 import ResizableTextarea from '@/components/ResizableTextarea'
@@ -268,9 +269,7 @@ const Additional = ({
       </div>
 
       <div className='mt-14 flex items-center border-t-2 py-3 border-gray-800 justify-end gap-x-6'>
-        <button type='button' onClick={onSubmit} className='button-indigo'>
-          Save Changes
-        </button>
+        <Button onClick={onSubmit}>Save Changes</Button>
       </div>
     </div>
   )

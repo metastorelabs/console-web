@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import clsx from 'clsx'
 import { toast } from 'react-hot-toast'
 
+import Button from '@/components/button'
 import ConfirmationModal from '@/components/ConfirmationModal'
 
 interface CategoryStructure {
@@ -48,12 +49,15 @@ const Launchpad = () => {
   const [underReview, setUnderReview] = useState<boolean>(false)
   const [pushToLiveEnabled, setPushToLiveEnabled] = useState<boolean>(false)
 
-  const handleSelect = (env: string, category: string, item: string) => {
+  const handleSelect = (category: string, item: string) => {
     const newSelectedItems = { ...selectedItems }
     if (!newSelectedItems[category]) newSelectedItems[category] = []
     const itemIndex = newSelectedItems[category].indexOf(item)
     if (itemIndex === -1) {
       newSelectedItems[category].push(item)
+    } else {
+      // Remove the item if it's already in the list
+      newSelectedItems[category].splice(itemIndex, 1)
     }
     setSelectedItems(newSelectedItems)
   }
@@ -139,7 +143,7 @@ const Launchpad = () => {
               name={`${env}-${category}-${item}`}
               type='checkbox'
               className='h-4 w-4 rounded text-indigo-600 focus:ring-offset-gray-950 bg-gray-900 focus:ring-indigo-600'
-              onChange={() => handleSelect(env, category, item)}
+              onChange={() => handleSelect(category, item)}
             />
           </div>
         )}
@@ -200,30 +204,22 @@ const Launchpad = () => {
                 disabled={!hasSelectedItems()}
                 pause={!underReview && !pushToLiveEnabled}
               >
-                <button
-                  className={`w-full mt-6 rounded-lg py-2.5 text-sm font-semibold leading-6 text-gray-100 bg-indigo-700 ${
-                    hasSelectedItems() ? 'hover:bg-indigo-800' : 'cursor-default opacity-50'
-                  }`}
-                >
+                <Button className='w-full mt-6' size='md' disabled={!hasSelectedItems()}>
                   Push to Review
-                </button>
+                </Button>
               </ConfirmationModal>
             )}
 
             {env === 'Review' && (
-              <button
-                className={clsx(
-                  'w-full mt-6 rounded-lg py-2.5 text-sm font-semibold leading-6 text-gray-100',
-                  pushToLiveEnabled
-                    ? 'bg-emerald-600 hover:bg-emerald-700'
-                    : `bg-rose-700 ${hasItems('Review') && !underReview && 'hover:bg-rose-800'}`,
-                  hasItems('Review') && !underReview ? '' : 'cursor-default opacity-50'
-                )}
+              <Button
+                className='w-full mt-6'
+                variant={pushToLiveEnabled ? 'green' : 'rose'}
                 onClick={pushToLiveEnabled ? pushToLive : submitForReview}
                 disabled={!hasItems('Review') || underReview}
+                size='md'
               >
                 {pushToLiveEnabled ? 'Push to Live' : underReview ? 'Under Review' : 'Submit for Review'}
-              </button>
+              </Button>
             )}
           </div>
         ))}

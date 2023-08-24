@@ -6,6 +6,8 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import LinkButton from '@/components/button/LinkButton'
+
 const collections = [
   {
     name: 'BT Collection',
@@ -68,12 +70,12 @@ const Collections = ({
           </p>
         </div>
         <div className='ml-16 mt-0 flex-none'>
-          <Link
+          <LinkButton
             href={`/org/${params.orgId}/product/${params.product}/store/collections/add-collection`}
-            className='button-indigo'
+            size='md'
           >
             Add Collection
-          </Link>
+          </LinkButton>
         </div>
       </div>
 

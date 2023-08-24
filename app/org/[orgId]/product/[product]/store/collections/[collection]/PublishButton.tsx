@@ -29,12 +29,12 @@ export default function PublishButton() {
         <>
           <Listbox.Label className='sr-only'>Change published status</Listbox.Label>
           <div className='relative'>
-            <div className='inline-flex divide-x divide-indigo-700 rounded-md shadow-sm'>
-              <button className='inline-flex items-center gap-x-1.5 rounded-l-md bg-indigo-600 hover:bg-indigo-700 px-3 py-2 text-white shadow-sm focus-visible-ring ring-inset'>
+            <div className='inline-flex divide-x divide-blue-700 rounded-md shadow-sm'>
+              <button className='inline-flex items-center gap-x-1.5 rounded-l-md bg-blue-600 hover:bg-blue-700 px-3 py-2 text-white shadow-sm focus-visible-ring ring-inset'>
                 <HiCheck className='-ml-0.5 h-5 w-5' aria-hidden='true' />
                 <p className='text-sm font-semibold'>{selected.title}</p>
               </button>
-              <Listbox.Button className='inline-flex items-center rounded-l-none rounded-r-md bg-indigo-600 p-2 hover:bg-indigo-700  focus-visible-ring ring-inset'>
+              <Listbox.Button className='inline-flex items-center rounded-l-none rounded-r-md bg-blue-600 p-2 hover:bg-blue-700  focus-visible-ring ring-inset'>
                 <span className='sr-only'>Change published status</span>
                 <HiChevronDown className='h-5 w-5 text-white' aria-hidden='true' />
               </Listbox.Button>
@@ -53,7 +53,7 @@ export default function PublishButton() {
                     key={option.title}
                     className={({ active }) =>
                       clsx(
-                        active ? 'bg-indigo-600 text-white' : 'text-slate-100',
+                        active ? 'bg-blue-600 text-white' : 'text-slate-100',
                         'cursor-default select-none p-4 text-sm'
                       )
                     }
@@ -64,12 +64,12 @@ export default function PublishButton() {
                         <div className='flex justify-between'>
                           <p className={selected ? 'font-semibold' : 'font-normal'}>{option.title}</p>
                           {selected ? (
-                            <span className={active ? 'text-white' : 'text-indigo-600'}>
+                            <span className={active ? 'text-white' : 'text-blue-600'}>
                               <HiCheck className='h-5 w-5' aria-hidden='true' />
                             </span>
                           ) : null}
                         </div>
-                        <p className={clsx(active ? 'text-indigo-200' : 'text-slate-400', 'mt-2')}>
+                        <p className={clsx(active ? 'text-blue-200' : 'text-slate-400', 'mt-2')}>
                           {option.description}
                         </p>
                       </div>

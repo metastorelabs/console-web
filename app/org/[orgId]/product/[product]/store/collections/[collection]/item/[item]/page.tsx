@@ -2,6 +2,8 @@ import { HiCube, HiUsers } from 'react-icons/hi'
 
 import Link from 'next/link'
 
+import Button from '@/components/button'
+
 import MediaLoader from '../../_components/MediaLoader'
 
 const product = {
@@ -52,7 +54,7 @@ const ItemPage = () => {
           </div>
         </div>
 
-        <div className='p-4 rounded-lg bg-gray-950 mt-10'>
+        <div className='p-4 rounded-lg bg-gray-800 mt-10'>
           <p className='text-slate-500'>Best price</p>
           <p className='text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl'>
             {product.price} {product.currency}
@@ -60,12 +62,9 @@ const ItemPage = () => {
         </div>
 
         <div className='mt-10'>
-          <button
-            type='button'
-            className='flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus-ring'
-          >
+          <Button type='button' className='w-full'>
             Buy Now
-          </button>
+          </Button>
         </div>
 
         <div className='mt-10 border-t border-gray-700 pt-10'>

@@ -9,6 +9,7 @@ import clsx from 'clsx'
 import { toast } from 'react-hot-toast'
 
 import Breadcrumb from '@/components/Breadcrumb'
+import Button from '@/components/button'
 
 const tabs = [
   { name: 'Browser', icon: HiOutlineGlobeAlt, disabled: false },
@@ -68,112 +69,6 @@ const fields: Fields = {
       isMinMax: true,
       minPlaceholder: 'Intel Core i3',
       maxPlaceholder: 'Intel Core i7',
-    },
-  ],
-  Windows: [
-    {
-      name: 'OS version',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: 'Windows 10',
-      maxPlaceholder: 'Windows 11',
-      required: true,
-    },
-    {
-      name: 'Memory',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: '1 GB',
-      maxPlaceholder: '4 GB',
-      required: true,
-    },
-    {
-      name: 'Processor',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: 'Intel Core i3',
-      maxPlaceholder: 'Intel Core i7',
-      required: true,
-    },
-    {
-      name: 'Graphics',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: 'Intel HD Graphics 4000',
-      maxPlaceholder: 'NVIDIA GeForce GTX 1050',
-      required: true,
-    },
-    {
-      name: 'Storage',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: '6 GB',
-      maxPlaceholder: '10 GB',
-      required: true,
-    },
-    {
-      name: 'DirectX',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: 'DirectX 11',
-      maxPlaceholder: 'DirectX 12',
-      required: true,
-    },
-    {
-      name: 'Internet Speed',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: '1 Mbps',
-      maxPlaceholder: '10 Mbps',
-    },
-  ],
-  Mac: [
-    {
-      name: 'OS version',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: 'Mac OS 10.15',
-      maxPlaceholder: 'Mac OS 12',
-      required: true,
-    },
-    {
-      name: 'Memory',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: '1 GB',
-      maxPlaceholder: '4 GB',
-      required: true,
-    },
-    {
-      name: 'Processor',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: 'Intel Core i3',
-      maxPlaceholder: 'Intel Core i7',
-      required: true,
-    },
-    {
-      name: 'Graphics',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: 'Intel HD Graphics 4000',
-      maxPlaceholder: 'NVIDIA GeForce GTX 1050',
-      required: true,
-    },
-    {
-      name: 'Storage',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: '1 GB',
-      maxPlaceholder: '4 GB',
-      required: true,
-    },
-    {
-      name: 'Internet Speed',
-      type: 'text',
-      isMinMax: true,
-      minPlaceholder: '5 Mbps',
-      maxPlaceholder: '8 Mbps',
     },
   ],
 }
@@ -288,7 +183,7 @@ const Specification = ({
                 disabled={tab.disabled}
                 className={clsx(
                   currentTab === tab.name
-                    ? 'border-indigo-500 text-indigo-500'
+                    ? 'border-blue-500 text-blue-500'
                     : 'border-transparent text-gray-500 hover:border-gray-300',
                   tab.disabled ? 'opacity-30 cursor-not-allowed' : 'cursor-pointer',
                   'group inline-flex w-full sm:w-auto justify-center items-center border-b-2 py-4 px-1 text-sm font-medium focus-visible-ring'
@@ -297,7 +192,7 @@ const Specification = ({
               >
                 <tab.icon
                   className={clsx(
-                    currentTab === tab.name ? 'text-indigo-500' : 'text-gray-400',
+                    currentTab === tab.name ? 'text-blue-500' : 'text-gray-400',
                     'sm:-ml-0.5 sm:mr-2 h-5 w-5'
                   )}
                   aria-hidden='true'
@@ -321,9 +216,7 @@ const Specification = ({
       )}
 
       <div className='mt-14 flex items-center border-t-2 py-3 max-w-7xl border-gray-800 justify-end gap-x-6'>
-        <button type='button' onClick={onSubmit} className='button-indigo'>
-          Save Changes
-        </button>
+        <Button onClick={onSubmit}>Save Changes</Button>
       </div>
     </div>
   )

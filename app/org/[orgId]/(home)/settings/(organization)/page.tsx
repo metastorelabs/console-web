@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react'
 
 import Image from 'next/image'
 
+import Button from '@/components/button'
 import DeleteCheckModal from '@/components/DeleteCheckModal'
 
 const Settings = ({
@@ -38,13 +39,9 @@ const Settings = ({
                 height={96}
               />
               <div>
-                <button
-                  type='button'
-                  className='rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible-ring ring-offset-2'
-                  onClick={() => fileUploadRef.current?.click()}
-                >
+                <Button variant='fade' size='sm' onClick={() => fileUploadRef.current?.click()}>
                   Change logo
-                </button>
+                </Button>
                 <p className='mt-2 text-xs leading-5 text-gray-400'>JPG, GIF or PNG. 10MB max.</p>
               </div>
 
@@ -122,9 +119,7 @@ const Settings = ({
           </div>
 
           <div className='mt-8 flex'>
-            <button type='submit' className='button-indigo'>
-              Save changes
-            </button>
+            <Button>Save changes</Button>
           </div>
         </form>
       </div>
@@ -138,7 +133,7 @@ const Settings = ({
         </div>
 
         <form className='flex items-start md:col-span-2'>
-          <button className='button-indigo'>Log out other sessions</button>
+          <Button>Log out other sessions</Button>
         </form>
       </div>
 
@@ -153,9 +148,7 @@ const Settings = ({
 
         <div className='flex items-start md:col-span-2'>
           <DeleteCheckModal keyword='organization' captchaText={params.orgId}>
-            <button className='rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus-visible-ring ring-offset-2 !ring-red-700'>
-              Yes, delete my organization
-            </button>
+            <Button variant='red'>Yes, delete my organization</Button>
           </DeleteCheckModal>
         </div>
       </div>

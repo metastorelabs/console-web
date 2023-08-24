@@ -26,7 +26,7 @@ type UserNavigationItem2 = {
 const userNavigation: (UserNavigationItem1 | UserNavigationItem2)[] = [
   {
     name: 'Manage account',
-    href: 'https://beta.meta-store.in/settings/account',
+    href: 'https://metastore.to/account',
     type: 'link',
     external: true,
   },

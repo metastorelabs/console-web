@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import { format, zonedTimeToUtc } from 'date-fns-tz'
 import toast from 'react-hot-toast'
 
+import Button from '@/components/button'
 import DateTimePicker from '@/components/DateTimePicker'
 import ListBox from '@/components/Listbox'
 import MultiSelect from '@/components/MultiSelect'
@@ -216,8 +217,8 @@ const Pricing = () => {
                       <>
                         <span
                           className={clsx(
-                            checked ? 'bg-indigo-600 border-transparent' : 'bg-gray-900 border-gray-300',
-                            active ? 'ring-2 ring-offset-2 ring-indigo-600 ring-offset-gray-900' : '',
+                            checked ? 'bg-blue-600 border-transparent' : 'bg-gray-900 border-gray-300',
+                            active ? 'ring-2 ring-offset-2 ring-blue-600 ring-offset-gray-900' : '',
                             'mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded-full border flex items-center justify-center'
                           )}
                           aria-hidden='true'
@@ -358,8 +359,8 @@ const Pricing = () => {
                           <>
                             <span
                               className={clsx(
-                                checked ? 'bg-indigo-600 border-transparent' : 'bg-gray-900 border-gray-300',
-                                active ? 'ring-2 ring-offset-2 ring-indigo-600' : '',
+                                checked ? 'bg-blue-600 border-transparent' : 'bg-gray-900 border-gray-300',
+                                active ? 'ring-2 ring-offset-2 ring-blue-600' : '',
                                 'mt-0.5 h-4 w-4 shrink-0 rounded-full border flex items-center justify-center'
                               )}
                               aria-hidden='true'
@@ -454,7 +455,7 @@ const Pricing = () => {
               </div>
               <div className='flex items-center justify-between pt-4'>
                 <dt className='font-medium text-gray-100'>You&apos;ll get currency worth of</dt>
-                <dd className='font-medium text-indigo-500'>{finalPriceText}</dd>
+                <dd className='font-medium text-blue-500'>{finalPriceText}</dd>
               </div>
             </dl>
           </div>
@@ -462,9 +463,7 @@ const Pricing = () => {
       )}
 
       <div className='mt-14 border-t pt-6 border-white/10 flex items-center justify-end gap-x-6 max-w-3xl'>
-        <button type='submit' onClick={handleSubmit} className='button-indigo'>
-          Save changes
-        </button>
+        <Button onClick={handleSubmit}>Save changes</Button>
       </div>
     </div>
   )

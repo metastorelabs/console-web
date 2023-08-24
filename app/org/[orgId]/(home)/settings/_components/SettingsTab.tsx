@@ -31,14 +31,14 @@ const SettingsTab = ({ orgId }: { orgId: string }) => {
             href={`/org/${orgId}/settings/${tab.href}`}
             className={clsx(
               settingsSegment === tab.activeSegment
-                ? 'border-indigo-500 text-indigo-500'
+                ? 'border-blue-500 text-blue-500'
                 : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-200',
               'group inline-flex w-full sm:w-auto justify-center items-center border-b-2 py-4 px-1 text-sm font-medium focus-visible-ring'
             )}
           >
             <tab.icon
               className={clsx(
-                settingsSegment === tab.activeSegment ? 'text-indigo-500' : 'text-gray-400 group-hover:text-gray-200',
+                settingsSegment === tab.activeSegment ? 'text-blue-500' : 'text-gray-400 group-hover:text-gray-200',
                 'sm:-ml-0.5 sm:mr-2 h-5 w-5'
               )}
               aria-hidden='true'

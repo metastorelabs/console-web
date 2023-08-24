@@ -5,10 +5,10 @@ import { useRef, useState } from 'react'
 import { HiOutlineDuplicate } from 'react-icons/hi'
 
 import { copyToClipboard } from '@/utils/common'
-import clsx from 'clsx'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
+import Button from '@/components/button'
 import DeleteCheckModal from '@/components/DeleteCheckModal'
 
 const Settings = ({
@@ -48,13 +48,9 @@ const Settings = ({
                 height={96}
               />
               <div>
-                <button
-                  type='button'
-                  onClick={() => fileUploadRef.current?.click()}
-                  className='rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible-ring ring-offset-2'
-                >
+                <Button variant='fade' size='sm' onClick={() => fileUploadRef.current?.click()}>
                   Change logo
-                </button>
+                </Button>
                 <p className='mt-2 text-xs leading-5 text-gray-400'>JPG, GIF or PNG. 10MB max.</p>
               </div>
 
@@ -115,14 +111,9 @@ const Settings = ({
           </div>
 
           <div className='mt-8 flex'>
-            <button
-              onClick={handleNameChange}
-              type='button'
-              disabled={productName === product}
-              className={clsx('button-indigo', productName === product ? 'opacity-50' : '')}
-            >
+            <Button onClick={handleNameChange} disabled={productName === product}>
               Save changes
-            </button>
+            </Button>
           </div>
         </form>
       </div>
@@ -138,9 +129,7 @@ const Settings = ({
 
         <div className='flex items-start md:col-span-2'>
           <DeleteCheckModal keyword='product' captchaText={productName}>
-            <button className='rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus-visible-ring ring-offset-2 !ring-red-700'>
-              Yes, delete my product
-            </button>
+            <Button variant='red'>Yes, delete my product</Button>
           </DeleteCheckModal>
         </div>
       </div>

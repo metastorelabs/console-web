@@ -10,6 +10,8 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
+import Button from '@/components/button'
+
 const CreateProductModal = ({ orgId, children }: { orgId: string; children: React.ReactNode }) => {
   const cancelButtonRef = useRef(null)
   const [step, setStep] = useState(1)
@@ -101,26 +103,17 @@ const CreateProductModal = ({ orgId, children }: { orgId: string; children: Reac
                         </div>
 
                         <div className='sm:flex mt-10'>
-                          <button
-                            type='button'
-                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
-                            onClick={onClose}
-                            ref={cancelButtonRef}
-                          >
+                          <Button className='w-full mr-8' variant='white' onClick={onClose} ref={cancelButtonRef}>
                             Cancel
-                          </button>
+                          </Button>
 
-                          <button
-                            type='button'
-                            className={clsx(
-                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-blue-700',
-                              !productName ? 'opacity-50' : 'hover:bg-blue-700'
-                            )}
+                          <Button
+                            className={clsx('w-full mt-3 sm:mt-0')}
                             disabled={!productName}
                             onClick={() => setStep(2)}
                           >
                             Continue
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     ) : (
@@ -174,28 +167,25 @@ const CreateProductModal = ({ orgId, children }: { orgId: string; children: Reac
                         </div>
 
                         <div className='sm:flex mt-10'>
-                          <button
-                            type='button'
-                            className='w-full justify-center rounded mr-8 bg-white px-4 py-4 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-ring ring-offset-2'
+                          <Button
+                            className='w-full mr-8'
+                            variant='white'
                             onClick={() => {
                               setStep(1)
                             }}
                           >
                             Back
-                          </button>
+                          </Button>
 
-                          <button
-                            type='button'
-                            className={clsx(
-                              'w-full justify-center rounded bg-blue-600 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 mt-3 sm:mt-0 focus-ring ring-offset-2 !ring-blue-700'
-                            )}
+                          <Button
+                            className={clsx('w-full mt-3 sm:mt-0')}
                             onClick={() => {
                               setOpen(false)
                               router.push(`/org/${orgId}/product/${productName}`)
                             }}
                           >
                             Confirm
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     )}

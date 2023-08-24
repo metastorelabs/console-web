@@ -5,6 +5,7 @@ import { HiCloudArrowUp, HiCog6Tooth, HiFingerPrint, HiOutlineShoppingBag, HiSer
 import Image from 'next/image'
 import Link from 'next/link'
 
+import LinkButton from '@/components/button/LinkButton'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 
 const primaryFeatures = [
@@ -163,20 +164,18 @@ const Landing = () => {
                   Give your web2 and web3 games the audience it deserves.
                 </p>
                 <div className='mt-10 flex items-center gap-x-6'>
-                  <Link
-                    href='/org/metastore'
-                    className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400'
-                  >
+                  <LinkButton href='/org/metastore' size='md'>
                     Enter console
-                  </Link>
-                  <Link
+                  </LinkButton>
+                  <LinkButton
                     href='https://docs.metastore.to'
-                    className='text-sm font-semibold leading-6 text-white'
                     target='_blank'
                     rel='noopener'
+                    variant='underline'
+                    size='md'
                   >
                     Go to Docs <span aria-hidden='true'>→</span>
-                  </Link>
+                  </LinkButton>
                 </div>
               </div>
             </div>
@@ -187,7 +186,7 @@ const Landing = () => {
         <FadeIn>
           <div className='mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8'>
             <div className='mx-auto max-w-2xl text-center'>
-              <h2 className='text-base font-semibold leading-7 text-indigo-400'>Distribute faster</h2>
+              <h2 className='text-base font-semibold leading-7 text-blue-400'>Distribute faster</h2>
               <p className='mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl'>
                 Everything you need to build and distribute your games.
               </p>
@@ -201,7 +200,7 @@ const Landing = () => {
                 {primaryFeatures.map((feature) => (
                   <div key={feature.name} className='flex flex-col'>
                     <dt className='text-base font-semibold leading-7 text-white'>
-                      <div className='mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500'>
+                      <div className='mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500'>
                         <feature.icon className='h-6 w-6 text-white' aria-hidden='true' />
                       </div>
                       {feature.name}
@@ -221,7 +220,7 @@ const Landing = () => {
           <FadeIn>
             <div className='mx-auto max-w-7xl px-6 lg:px-8'>
               <div className='mx-auto max-w-2xl sm:text-center'>
-                <h2 className='text-base font-semibold leading-7 text-indigo-400'>Metastore Console</h2>
+                <h2 className='text-base font-semibold leading-7 text-blue-400'>Metastore Console</h2>
                 <p className='mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl'>
                   Self-service publishing tools.
                 </p>
@@ -252,7 +251,7 @@ const Landing = () => {
                   <FadeIn key={feature.name}>
                     <div className='relative pl-9'>
                       <dt className='inline font-semibold text-white'>
-                        <feature.icon className='absolute left-1 top-1 h-5 w-5 text-indigo-500' aria-hidden='true' />
+                        <feature.icon className='absolute left-1 top-1 h-5 w-5 text-blue-500' aria-hidden='true' />
                         {feature.name}
                       </dt>{' '}
                       <dd className='inline'>{feature.description}</dd>

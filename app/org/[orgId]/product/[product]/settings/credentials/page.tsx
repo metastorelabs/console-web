@@ -9,6 +9,8 @@ import { copyToClipboard } from '@/utils/common'
 import clsx from 'clsx'
 import { format } from 'date-fns-tz'
 
+import Button from '@/components/button'
+
 import AccessKeyModal from './_components/AccessKeyModal'
 import ApiKeyModal from './_components/ApiKeyModal'
 
@@ -99,9 +101,7 @@ const AccessCodesComponent = () => {
         </div>
         <div className='mt-4 sm:ml-16 sm:mt-0 sm:flex-none'>
           <AccessKeyModal>
-            <button type='button' className='button-indigo'>
-              Create access code
-            </button>
+            <Button size='md'>Create access code</Button>
           </AccessKeyModal>
         </div>
       </div>
@@ -126,12 +126,9 @@ const AccessCodesComponent = () => {
                         'Access Code'
                       ) : (
                         <div className='absolute left-14 top-0 flex h-12 items-center space-x-3 sm:left-12'>
-                          <button
-                            type='button'
-                            className='rounded bg-white/10 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible-ring'
-                          >
+                          <Button variant='fade' size='sm' className='!py-1'>
                             Delete all
-                          </button>
+                          </Button>
                         </div>
                       )}
                     </th>
@@ -241,9 +238,7 @@ const ApiKeysComponent = () => {
         </div>
         <div className='mt-4 sm:ml-16 sm:mt-0 sm:flex-none'>
           <ApiKeyModal>
-            <button type='button' className='button-indigo'>
-              Create API Key
-            </button>
+            <Button size='md'>Create API Key</Button>
           </ApiKeyModal>
         </div>
       </div>
@@ -268,12 +263,9 @@ const ApiKeysComponent = () => {
                         'Client ID'
                       ) : (
                         <div className='absolute left-14 top-0 flex h-12 items-center space-x-3 sm:left-12'>
-                          <button
-                            type='button'
-                            className='rounded bg-white/10 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible-ring'
-                          >
+                          <Button variant='fade' size='sm' className='!py-1'>
                             Delete all
-                          </button>
+                          </Button>
                         </div>
                       )}
                     </th>
