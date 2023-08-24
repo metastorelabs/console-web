@@ -86,7 +86,6 @@ const ConfirmationModal = ({
 
                     <div className='sm:flex mt-10'>
                       <Button
-                        type='button'
                         onClick={() => setOpen(false)}
                         ref={cancelButtonRef}
                         variant='white'
@@ -96,7 +95,6 @@ const ConfirmationModal = ({
                       </Button>
 
                       <Button
-                        type='button'
                         className='w-full mt-3 sm:mt-0'
                         variant={btnColor}
                         onClick={() => {

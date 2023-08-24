@@ -4,6 +4,8 @@ import React from 'react'
 
 import Image from 'next/image'
 
+import Button from '@/components/button'
+
 const HeroInfo = () => {
   const offer = 59.99
   const price = 149.99
@@ -37,9 +39,9 @@ const HeroInfo = () => {
           <p className='ml-1'>{price && currency}</p>
         </div>
         <p className='text-sm mt-3'>Sale ends 7/25/2023 at 10:30 PM</p>
-        <button className='bg-white hover:bg-white/90 py-2 text-sm md:text-base rounded-md text-black mt-6 lg:mt-3 w-full md:max-w-xs focus-ring ring-offset-2'>
+        <Button className='mt-6 lg:mt-3 w-full md:max-w-xs' variant='white' size='md'>
           BUY NOW
-        </button>
+        </Button>
       </div>
     </div>
   )

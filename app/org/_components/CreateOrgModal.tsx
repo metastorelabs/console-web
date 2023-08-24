@@ -109,18 +109,11 @@ const CreateOrgModal = ({
                         </div>
 
                         <div className='sm:flex mt-10'>
-                          <Button
-                            type='button'
-                            className='w-full mr-8'
-                            variant='white'
-                            onClick={onClose}
-                            ref={cancelButtonRef}
-                          >
+                          <Button className='w-full mr-8' variant='white' onClick={onClose} ref={cancelButtonRef}>
                             Cancel
                           </Button>
 
                           <Button
-                            type='button'
                             className={clsx('w-full mt-3 sm:mt-0')}
                             disabled={!orgName}
                             onClick={() => setStep(2)}
@@ -181,7 +174,6 @@ const CreateOrgModal = ({
 
                         <div className='sm:flex mt-10'>
                           <Button
-                            type='button'
                             className='w-full mr-8'
                             variant='white'
                             onClick={() => {
@@ -192,7 +184,6 @@ const CreateOrgModal = ({
                           </Button>
 
                           <Button
-                            type='button'
                             className={clsx('w-full mt-3 sm:mt-0')}
                             onClick={() => {
                               setOpen(false)

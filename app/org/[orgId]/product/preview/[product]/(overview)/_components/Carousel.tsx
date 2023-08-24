@@ -61,8 +61,8 @@ const Carousel = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
   const [currentSlide, setCurrentSlide] = useState<HTMLElement | null>(null)
   const [manualPause, setManualPause] = useState(true)
-  const prevRef = useRef<HTMLDivElement>(null)
-  const nextRef = useRef<HTMLDivElement>(null)
+  const prevRef = useRef<HTMLButtonElement>(null)
+  const nextRef = useRef<HTMLButtonElement>(null)
   const playerContainerRef = useRef<HTMLDivElement>(null)
   const [isVisible] = useVisibilityChange(playerContainerRef, 40)
   const mobileUser = typeof window !== 'undefined' && window.innerWidth < 1024
@@ -158,19 +158,19 @@ const Carousel = () => {
             )
           })}
         </Swiper>
-        <div
+        <button
           ref={prevRef}
-          className='group cursor-pointer absolute top-1/2 transform -translate-y-1/2 z-10 h-1/2 w-10 hover:backdrop-brightness-75 backdrop-brightness-95 flex items-center justify-center'
+          className='group focus-visible-ring absolute top-1/2 transform -translate-y-1/2 z-10 h-1/2 w-10 hover:backdrop-brightness-75 backdrop-brightness-95 flex items-center justify-center'
         >
           <BsFillCaretLeftFill className='h-6 w-6 text-gray-200 opacity-70 group-hover:opacity-100' />
-        </div>
+        </button>
 
-        <div
+        <button
           ref={nextRef}
-          className='group cursor-pointer absolute top-1/2 transform right-0  -translate-y-1/2 z-10 h-1/2 w-10 hover:backdrop-brightness-75 backdrop-brightness-95 flex items-center justify-center'
+          className='group focus-visible-ring absolute top-1/2 transform right-0  -translate-y-1/2 z-10 h-1/2 w-10 hover:backdrop-brightness-75 backdrop-brightness-95 flex items-center justify-center'
         >
           <BsFillCaretRightFill className='h-6 w-6 text-gray-200 opacity-70 group-hover:opacity-100' />
-        </div>
+        </button>
       </div>
       <Swiper
         onSwiper={setThumbsSwiper}

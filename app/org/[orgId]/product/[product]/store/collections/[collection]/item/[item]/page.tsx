@@ -62,9 +62,7 @@ const ItemPage = () => {
         </div>
 
         <div className='mt-10'>
-          <Button type='button' className='w-full'>
-            Buy Now
-          </Button>
+          <Button className='w-full'>Buy Now</Button>
         </div>
 
         <div className='mt-10 border-t border-gray-700 pt-10'>

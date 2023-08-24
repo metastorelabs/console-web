@@ -649,6 +649,7 @@ const General = ({
               title='Revert Changes'
               description='Are you sure you want to revert all changes?'
               onConfirm={revertChanges}
+              btnText='Revert'
             >
               <Button
                 type='reset'

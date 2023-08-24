@@ -73,7 +73,7 @@ const Version = ({
             >
               Edit
             </LinkButton>
-            <Button type='button' className='ml-3' variant='red' size='sm'>
+            <Button className='ml-3' variant='red' size='sm'>
               Delete
             </Button>
           </div>

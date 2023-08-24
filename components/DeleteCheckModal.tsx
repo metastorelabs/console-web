@@ -3,7 +3,8 @@ import { Fragment, useRef, useState } from 'react'
 import { HiExclamationTriangle } from 'react-icons/hi2'
 
 import { Dialog, Transition } from '@headlessui/react'
-import clsx from 'clsx'
+
+import Button from './button'
 
 const DeleteCheckModal = ({
   keyword,
@@ -51,8 +52,8 @@ const DeleteCheckModal = ({
                 leaveFrom='opacity-100 translate-y-0 sm:scale-100'
                 leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
               >
-                <Dialog.Panel className='relative transform overflow-hidden rounded-lg bg-gray-900 text-left shadow-xl transition-all sm:my-8 w-full sm:max-w-lg'>
-                  <div className='px-4 pb-4 pt-5 sm:p-8 sm:pb-4'>
+                <Dialog.Panel className='relative transform overflow-hidden rounded-lg bg-gray-900 text-left shadow-xl transition-all sm:my-8 w-full sm:max-w-xl'>
+                  <div className='px-4 pb-4 pt-5 sm:p-14'>
                     <div className='sm:flex sm:items-start'>
                       <div className='mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-900/20 sm:mx-0 sm:h-10 sm:w-10'>
                         <HiExclamationTriangle className='h-6 w-6 text-red-500' aria-hidden='true' />
@@ -81,30 +82,26 @@ const DeleteCheckModal = ({
                       onChange={(e) => setReCaptcha(e.target.value)}
                       className='input-ui'
                     />
-                  </div>
-                  <div className='px-4 pt-3 pb-5 sm:flex sm:flex-row-reverse sm:px-8 mt-2'>
-                    <button
-                      type='button'
-                      className={clsx(
-                        'inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-1/4',
-                        reCaptcha !== captchaText ? 'opacity-50' : ''
-                      )}
-                      onClick={() => {
-                        if (reCaptcha === captchaText) {
-                          closeModel()
-                        }
-                      }}
-                    >
-                      Delete
-                    </button>
-                    <button
-                      type='button'
-                      className='mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-1/4'
-                      onClick={() => closeModel()}
-                      ref={cancelButtonRef}
-                    >
-                      Cancel
-                    </button>
+
+                    <div className='sm:flex mt-10'>
+                      <Button
+                        onClick={() => closeModel()}
+                        ref={cancelButtonRef}
+                        variant='white'
+                        className='w-full mr-8'
+                      >
+                        Cancel
+                      </Button>
+
+                      <Button
+                        className='w-full mt-3 sm:mt-0'
+                        variant='red'
+                        onClick={() => closeModel()}
+                        disabled={reCaptcha !== captchaText}
+                      >
+                        Delete
+                      </Button>
+                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
