@@ -36,7 +36,7 @@ const Sidebar = () => {
     <div className='flex flex-col w-20 bg-gray-950 pb-40 group'>
       <div className='flex h-20 items-center justify-center shrink-0 opacity-30'>
         <div className='-m-2 p-2 rounded-full focus-visible-ring'>
-          <Image src='/logo.png' alt='Metastore logo' width={50} height={50} className='' />
+          <Image src='/logo.svg' alt='Metastore logo' width={44} height={44} className='' />
         </div>
       </div>
 

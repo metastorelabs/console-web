@@ -87,8 +87,8 @@ export default function Footer({ orgId }: { orgId: string }) {
       </h2>
       <div className='mx-auto max-w-7xl px-6 py-8 lg:px-8'>
         <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
-          <div className='space-y-6'>
-            <Image src='/longlogo.png' alt='Company name' width={180} height={80} />
+          <div className='space-y-4'>
+            <Image src='/longlogo.svg' alt='Company name' width={180} height={80} />
             <p className='text-sm leading-6 text-gray-300'>A decentralized metaverse marketplace.</p>
             <div className='flex space-x-6'>
               {navigation.social.map((item) => (

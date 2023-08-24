@@ -28,9 +28,9 @@ const priceOptions = [
 
 const allPaymentOptions = [
   {
-    name: 'STORE',
-    value: 'store',
-    avatar: '/logo.png',
+    name: 'MATIC',
+    value: 'matic',
+    avatar: '/logo/polygon-logo.png',
   },
   {
     name: 'USDT',

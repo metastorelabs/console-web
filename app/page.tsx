@@ -145,7 +145,7 @@ const Landing = () => {
           <FadeIn>
             <div className='mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-40 lg:flex lg:px-8 lg:pt-40 lg:min-h-screen'>
               <div className='mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8'>
-                <Image className='h-12 w-12' src='/logo.png' alt='Metastore logo' width={48} height={48} />
+                <Image className='h-12 w-12' src='/logo.svg' alt='Metastore logo' width={48} height={48} />
 
                 <div className='mt-24 sm:mt-32 lg:mt-16 flex'>
                   <div className='relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20'>
