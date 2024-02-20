@@ -50,7 +50,13 @@ const Dashboard = ({
 }) => {
   return (
     <div>
-      <Image className='rounded-lg aspect-square' src='/temp/kojima.png' alt='Your Company' width={102} height={102} />
+      <Image
+        className='rounded-lg aspect-square w-28 h-28'
+        src='/temp/kojima.png'
+        alt='Your Company'
+        width={112}
+        height={112}
+      />
       <h1 className='text-white text-3xl md:text-4xl font-bold mt-4'>{params.orgId}</h1>
       <div className='bg-gray-950 rounded-lg my-10'>
         <div className='mx-auto max-w-7xl'>
