@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='date']::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  /* show ring on focus */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-gray-950;
+  }
+
+  /* show ring on focus only when using keyboard */
+  .focus-visible-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-gray-950;
+  }
+
+  .input-ui {
+    @apply block w-full bg-white/5 focus-ring rounded-md pl-5 border-0 py-2 text-gray-200 placeholder:text-gray-500 text-sm leading-6;
+  }
+}

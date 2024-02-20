@@ -1,0 +1,22 @@
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+}
+
+@media screen and (min-width: 768px) {
+  .collection-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .collection-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .collection-grid-big {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
