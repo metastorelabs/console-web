@@ -37,7 +37,7 @@ const Overview = ({
                   height={34}
                 />
                 <h1 className='flex gap-x-3 text-base leading-7'>
-                  <span className='font-semibold text-white line-clamp-1'>{params.product}</span>
+                  <span className='font-semibold text-white line-clamp-1'>{decodeURIComponent(params.product)}</span>
                 </h1>
               </div>
               <p className='mt-2 text-xs leading-6 text-gray-400'>{params.orgId}</p>

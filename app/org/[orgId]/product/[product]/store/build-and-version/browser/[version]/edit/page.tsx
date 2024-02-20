@@ -124,7 +124,7 @@ const VersionEdit = ({
             variant='underline'
             size='md'
           >
-            Back
+            Go Back
           </LinkButton>
           <Button size='md'>Edit version</Button>
         </div>

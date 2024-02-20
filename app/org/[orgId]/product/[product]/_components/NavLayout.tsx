@@ -87,7 +87,7 @@ const NavLayout = ({ children, orgId, product }: { children: React.ReactNode; or
                 width={34}
                 height={34}
               />
-              <span className='line-clamp-1 uppercase max-sm:hidden'> {product}</span>
+              <span className='line-clamp-1 uppercase max-sm:hidden'> {decodeURIComponent(product)}</span>
             </div>
           </Topbar>
 

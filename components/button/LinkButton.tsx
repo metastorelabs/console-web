@@ -42,7 +42,7 @@ const LinkButton = ({
   return (
     <Link
       className={clsx(
-        'rounded text-sm text-white shadow-sm focus-ring ring-offset-2',
+        'rounded text-sm text-white shadow-sm focus-ring ring-offset-2 text-center',
         btnColors[variant],
         btnSizes[size],
         className
